@@ -1,0 +1,51 @@
+#include <iostream>
+#include <random>
+
+int getRandom() {
+
+	return 10 + rand() % 91;
+}
+
+int main()
+{	
+	srand(time(0));
+	const int row = 3;
+	const int column = 3;
+	
+	int f[row][column];
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < column; j++)
+		{
+			f[i][j] = getRandom();
+
+		}
+	}
+
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < column; j++)
+		{
+			std::cout << f[i][j] << ' ';
+
+		}
+		std::cout << std::endl;
+	}
+	int max = 0;
+	for (int i = 0; i < row; i++)
+	{
+		int SumRow = 0;
+		for (int j = 0; j < column; j++)
+		{
+			SumRow += f[i][j];
+			if (max < SumRow)
+			{
+				max = SumRow;
+			}
+		}
+		std::cout << "summa " << i+1 << " stroki: " << SumRow<< std::endl;
+		
+	}
+	std::cout << "maximum summa=" << max;
+
+}
