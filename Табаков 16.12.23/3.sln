@@ -1,0 +1,11 @@
+#include <iostream>
+int main()
+{
+	int f[4]{ 1 , 2 , 3 , 4 };
+	
+
+	for (int *i = std::end(f) - 1; i >= std::begin(f); i--)
+	{
+		std::cout << *i << " ";
+	}
+}
