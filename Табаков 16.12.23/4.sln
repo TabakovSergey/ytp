@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+int main()
+{
+	
+	std::string a = "sergey12345671122341";
+	int f[10]{ 0,0,0,0,0,0,0,0,0,0 };
+	for (int i = 0; i < a.length(); i++)
+	{
+		if (isdigit(a[i]))
+		{
+			f[a[i] - '0']++;
+
+		}
+	}
+	int s = 0;
+	for (int i = 0; i < 10; i++) 
+	{
+		std::cout << f[i] << ' ';
+		
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		if (f[i] > s)
+		{
+			s = i;
+		}
+		
+	}
+	std::cout << s;
+	
+}
